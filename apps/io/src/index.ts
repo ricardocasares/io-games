@@ -9,7 +9,7 @@ const io = new Server({
     origin: [
       "http://localhost:3000",
       "https://io-games.vercel.app",
-      "https://io-games-hike.vercel.app/",
+      "https://io-games-hike.vercel.app",
     ],
     methods: ["GET", "POST"],
   },
