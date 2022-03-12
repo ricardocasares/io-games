@@ -8,8 +8,9 @@
   ],
   "scripts": {
     "dev": "turbo run dev",
-    "build": "turbo run build",
-    "start:io": "turbo run start --scope=io"
+    "start:io": "turbo run start --scope=@app/io",
+    "start:www": "turbo run start --scope=@app/www",
+    "build:www": "turbo run build --scope=@app/www"
   },
   "keywords": [],
   "author": "",
