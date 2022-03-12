@@ -1,0 +1,17 @@
+{
+  "name": "io",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "PORT=4000 tsnd src/index.ts",
+    "start": "tsnd src/index.ts"
+  },
+  "dependencies": {
+    "@convergence/color-assigner": "^0.3.0",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.2"
+  }
+}
