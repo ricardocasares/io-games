@@ -1,6 +1,6 @@
 import { Server } from "socket.io";
 import { ColorAssigner } from "@convergence/color-assigner";
-import type { Room } from "@app/domain";
+import type { Room } from "@pkg/domain";
 
 const PORT = parseInt(process.env.PORT) || 3001;
 

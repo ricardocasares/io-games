@@ -3,7 +3,7 @@ import { useSocket, useSocketEvent } from "socket.io-react-hook";
 import { FormEventHandler, useState } from "react";
 import { Avatar, Input, Button, Container, Grid, Text } from '@nextui-org/react';
 import { useMotion } from "react-use";
-import type { User } from "@app/domain";
+import type { User } from "@pkg/domain";
 
 export default function Home() {
   const [name, setName] = useState("");
