@@ -16,5 +16,8 @@
   "dependencies": {
     "turbo": "^1.1.6"
   },
-  "packageManager": "yarn@1.22.11"
+  "packageManager": "yarn@1.22.11",
+  "engines": {
+    "node": "14.x"
+  }
 }
