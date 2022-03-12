@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "dev": "turbo run dev",
+    "build": "turbo run build",
     "start:io": "turbo run start --scope=io"
   },
   "keywords": [],
