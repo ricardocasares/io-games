@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useSocket, useSocketEvent } from "socket.io-react-hook";
 import { FormEventHandler, useState } from "react";
 import { Avatar, Input, Button, Container, Grid, Text } from '@nextui-org/react';
+import { useMotion } from "react-use";
 import type { User } from "@app/domain";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
   const { socket } = useSocket(process.env.NEXT_PUBLIC_IO_SERVER);
   const { lastMessage: data } = useSocketEvent(socket, 'data');
   const { lastMessage: presence = [] } = useSocketEvent<User[]>(socket, 'presence');
+  const state = useMotion();
 
   const disabled = name.length < 3;
 
@@ -24,6 +26,11 @@ export default function Home() {
     <Container display="flex">
       <div style={{ flex: 1 }}>
         <Text h1>Hello there</Text>
+        <pre>
+          <code>
+            {JSON.stringify(state, null, 1)}
+          </code>
+        </pre>
       </div>
       <form id="name" style={{ display: "none" }} onSubmit={onSubmit}></form>
       <Grid.Container>

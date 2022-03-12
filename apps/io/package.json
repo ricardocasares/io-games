@@ -1,5 +1,5 @@
 {
-  "name": "io",
+  "name": "@app/io",
   "version": "1.0.0",
   "scripts": {
     "dev": "tsnd src/index.ts",
