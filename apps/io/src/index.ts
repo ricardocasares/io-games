@@ -11,6 +11,7 @@ const io = new Server({
       "https://io-games.vercel.app",
       "https://io-games-hike.vercel.app/",
     ],
+    methods: ["GET", "POST"],
   },
 });
 
