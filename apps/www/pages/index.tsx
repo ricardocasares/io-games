@@ -1,18 +1,27 @@
-import { useEffect } from "react";
-import { io } from "socket.io-client";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
+import Link from "next/link";
+import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator';
 
-export default function Home() {
-  useEffect(() => {
-    const socket = io("ws://localhost:4000");
-    socket.emit('join', "mamada", "rick");
-    socket.on("presence", console.log);
-  }, []);
-
+export default function Home(props: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', width: "100%" }}>
       <h1>
-        <p>Hellasdo</p>
+        <p>Hello, get a room!</p>
+        <Link href={`/room/${props.roomName}`}>Get a room</Link>
       </h1>
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const roomName: string = uniqueNamesGenerator({
+    separator: "-",
+    dictionaries: [adjectives, colors, animals]
+  });
+
+  return {
+    props: {
+      roomName
+    }
+  };
+};

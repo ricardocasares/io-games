@@ -9,10 +9,14 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@app/domain": "*",
     "next": "latest",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "socket.io-client": "^4.4.1"
+    "socket.io-client": "^4.4.1",
+    "socket.io-react-hook": "^1.0.15",
+    "unique-names-generator": "^4.7.1",
+    "web-api-hooks": "^3.0.2"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",

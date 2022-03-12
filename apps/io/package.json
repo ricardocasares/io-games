@@ -2,16 +2,21 @@
   "name": "io",
   "version": "1.0.0",
   "scripts": {
-    "dev": "PORT=4000 tsnd src/index.ts",
-    "start": "tsnd src/index.ts"
+    "dev": "tsnd src/index.ts",
+    "start": "ts-node src/index.ts"
   },
   "dependencies": {
+    "@app/domain": "*",
     "@convergence/color-assigner": "^0.3.0",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.4.1",
+    "ts-node": "^10.7.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.2"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
