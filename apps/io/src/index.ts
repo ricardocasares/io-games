@@ -6,8 +6,11 @@ const PORT = parseInt(process.env.PORT) || 3001;
 
 const io = new Server({
   cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
+    origin: [
+      "http://localhost:3000",
+      "https://io-games.vercel.app",
+      "https://io-games-hike.vercel.app/",
+    ],
   },
 });
 
