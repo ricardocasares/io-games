@@ -6,7 +6,7 @@ import type { User } from "@app/domain";
 export default function Home() {
   const [name, setName] = useState("");
   const { query: { id } } = useRouter();
-  const { socket } = useSocket("ws://localhost:3001");
+  const { socket } = useSocket(process.env.NEXT_PUBLIC_IO_SERVER);
   const { lastMessage: data } = useSocketEvent(socket, 'data');
   const { lastMessage: presence = [] } = useSocketEvent<User[]>(socket, 'presence');
 

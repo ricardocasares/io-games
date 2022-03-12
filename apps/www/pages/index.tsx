@@ -1,4 +1,4 @@
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
+import type { InferGetStaticPropsType } from "next";
 import Link from "next/link";
 import { uniqueNamesGenerator, adjectives, colors, animals } from 'unique-names-generator';
 
