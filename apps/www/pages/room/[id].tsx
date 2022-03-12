@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useSocket, useSocketEvent } from "socket.io-react-hook";
 import { FormEventHandler, useState } from "react";
-import { Avatar, Input, Button, Container, Grid } from '@nextui-org/react';
+import { Avatar, Input, Button, Container, Grid, Text } from '@nextui-org/react';
 import type { User } from "@app/domain";
 
 export default function Home() {
@@ -20,12 +20,13 @@ export default function Home() {
     setSubmit(true);
     socket.emit('join', id, name);
   };
-
   return (
-    <Container display="flex" css={{ height: "100%", flexDirection: "column" }}>
-      <div style={{ flex: 1, border: "1px solid red" }}>Conasdadtent</div>
+    <Container display="flex">
+      <div style={{ flex: 1 }}>
+        <Text h1>Hello there</Text>
+      </div>
       <form id="name" style={{ display: "none" }} onSubmit={onSubmit}></form>
-      <Grid.Container css={{ border: "1px solid red" }}>
+      <Grid.Container>
         {!submit && <Grid.Container gap={2} css={{ margin: 0 }}>
           <Grid xs={12}>
             <Input size="md" width="100%" form="name" label="Name" labelPlaceholder="Name" type="text" defaultValue={name} onChange={e => setName(e.target.value)} />
