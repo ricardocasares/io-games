@@ -9,6 +9,7 @@ import { Stack } from "@/components/Stack";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 import { Avatar } from "@/components/Avatar";
+import { Box } from "@/components/Box";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -16,6 +17,7 @@ export default function Home() {
   const { query: { id } } = useRouter();
   const { socket } = useSocket(process.env.NEXT_PUBLIC_IO_SERVER);
   const { lastMessage: data } = useSocketEvent(socket, 'data');
+  const { lastMessage: admin } = useSocketEvent(socket, 'admin');
   const { lastMessage: presence = [] } = useSocketEvent<User[]>(socket, 'presence');
   const state = useMotion();
 
@@ -35,18 +37,25 @@ export default function Home() {
   return (
     <Layout>
       <Stack as="nav">
+        <Text>{id}</Text>
         <Text h1>Waiting room</Text>
-        <Text h2>{id}</Text>
       </Stack>
 
-      <Stack>
-        <div>
+      {!Boolean(presence.length) && <Stack>
+        <Text h3>Room is empty so far.</Text>
+      </Stack>}
+
+      {Boolean(presence.length) && <Stack>
+        <Text h3>Participants</Text>
+        <Box>
           {presence.map(({ color, name }) => <Avatar {...{ color, name }} />)}
-        </div>
-      </Stack>
+        </Box>
+      </Stack>}
 
-      {!submit && <Stack as="form" onSubmit={onSubmit}>
-        <Text h2>Join this channel</Text>
+      {admin && <p>admin</p>}
+
+      {!submit && <Stack space="lg" as="form" onSubmit={onSubmit}>
+        <Text h3>Join this room</Text>
         <Input name="name" placeholder="What's your name?" onChange={onNameChange} />
         <Button disabled={disabled} type="submit">Submit</Button>
       </Stack>}

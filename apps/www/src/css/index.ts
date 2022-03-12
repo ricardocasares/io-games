@@ -1,4 +1,4 @@
-import { createStitches } from "@stitches/react";
+import { createStitches, PropertyValue } from "@stitches/react";
 
 export const { css, styled, globalCss, keyframes, getCssText, createTheme } =
   createStitches({
@@ -64,5 +64,66 @@ export const { css, styled, globalCss, keyframes, getCssText, createTheme } =
         6: "32px",
         7: "40px",
       },
+    },
+    utils: {
+      p: (value: PropertyValue<"paddingTop">) => ({
+        paddingTop: value,
+        paddingBottom: value,
+        paddingLeft: value,
+        paddingRight: value,
+      }),
+      pt: (value: PropertyValue<"paddingTop">) => ({
+        paddingTop: value,
+      }),
+      pr: (value: PropertyValue<"paddingTop">) => ({
+        paddingRight: value,
+      }),
+      pb: (value: PropertyValue<"paddingTop">) => ({
+        paddingBottom: value,
+      }),
+      pl: (value: PropertyValue<"paddingTop">) => ({
+        paddingLeft: value,
+      }),
+      px: (value: PropertyValue<"paddingTop">) => ({
+        paddingLeft: value,
+        paddingRight: value,
+      }),
+      py: (value: PropertyValue<"paddingTop">) => ({
+        paddingTop: value,
+        paddingBottom: value,
+      }),
+      m: (value: PropertyValue<"marginTop">) => ({
+        marginTop: value,
+        marginBottom: value,
+        marginLeft: value,
+        marginRight: value,
+      }),
+      mt: (value: PropertyValue<"marginTop">) => ({
+        marginTop: value,
+      }),
+      mr: (value: PropertyValue<"marginTop">) => ({
+        marginRight: value,
+      }),
+      mb: (value: PropertyValue<"marginTop">) => ({
+        marginBottom: value,
+      }),
+      ml: (value: PropertyValue<"marginTop">) => ({
+        marginLeft: value,
+      }),
+      mx: (value: PropertyValue<"marginTop">) => ({
+        marginLeft: value,
+        marginRight: value,
+      }),
+      my: (value: PropertyValue<"marginTop">) => ({
+        marginTop: value,
+        marginBottom: value,
+      }),
+      size: (value: PropertyValue<"width">) => ({
+        width: value,
+        height: value,
+      }),
+      bc: (value: PropertyValue<"backgroundColor">) => ({
+        backgroundColor: value,
+      }),
     },
   });

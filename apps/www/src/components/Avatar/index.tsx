@@ -3,8 +3,7 @@ import { VariantProps } from "@stitches/react";
 import { FC } from "react";
 
 export const AvatarWrapper = styled("div", {
-  width: "40px",
-  height: "40px",
+  size: "40px",
   textAlign: "center",
   display: "inline-block",
   margin: 0,
@@ -21,14 +20,12 @@ export const AvatarWrapper = styled("div", {
   variants: {
     size: {
       lg: {
-        width: "60px",
-        height: "60px",
+        size: "60px",
         lineHeight: "60px",
         fontSize: "$4",
       },
       xl: {
-        width: "80px",
-        height: "80px",
+        size: "80px",
         lineHeight: "80px",
         fontSize: "$5",
       },
