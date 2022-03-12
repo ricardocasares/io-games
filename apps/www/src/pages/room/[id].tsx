@@ -39,7 +39,6 @@ export default function Home() {
         <Text h2>{id}</Text>
       </Stack>
 
-
       <Stack>
         <div>
           {presence.map(({ color, name }) => <Avatar {...{ color, name }} />)}
