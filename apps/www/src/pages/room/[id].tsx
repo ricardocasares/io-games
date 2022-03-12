@@ -9,7 +9,6 @@ import { Stack } from "@/components/Stack";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
 import { Avatar } from "@/components/Avatar";
-import { EventHandler } from "react";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -22,15 +21,15 @@ export default function Home() {
 
   const disabled = name.length < 3;
 
-  const onSubmit: FormEventHandler = (e) => {
+  const onSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     if (disabled) return;
     setSubmit(true);
     socket.emit('join', id, name);
   };
 
-  const onNameChange = (e) => {
-    setName(e.target.value);
+  const onNameChange: FormEventHandler<HTMLInputElement> = (e) => {
+    setName(e.currentTarget.value);
   };
 
   return (
@@ -49,12 +48,8 @@ export default function Home() {
 
       {!submit && <Stack as="form" onSubmit={onSubmit}>
         <Text h2>Join this channel</Text>
-        <div>
-          <Input name="name" placeholder="What's your name?" onChange={onNameChange} />
-        </div>
-        <div>
-          <Button disabled={disabled} type="submit">Submit</Button>
-        </div>
+        <Input name="name" placeholder="What's your name?" onChange={onNameChange} />
+        <Button disabled={disabled} type="submit">Submit</Button>
       </Stack>}
     </Layout>
   );
