@@ -18,7 +18,7 @@ export const globalStyles = globalCss({
 
   html: {
     boxSizing: "border-box",
-    height: "100vh",
+    height: "100%",
     minHeight: "100%",
   },
 
@@ -42,5 +42,10 @@ export const globalStyles = globalCss({
   a: {
     textDecoration: "none",
     color: "$foreground",
+  },
+
+  "body, #__next": {
+    height: "100%",
+    minHeight: "100%",
   },
 });
