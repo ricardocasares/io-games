@@ -1,6 +1,7 @@
 import { styled } from "@/css";
 import { VariantProps } from "@stitches/react";
 import { FC } from "react";
+import { Box } from "../Box";
 
 export const AvatarWrapper = styled("div", {
   size: "40px",
@@ -48,3 +49,17 @@ export const Avatar: FC<AvatarProps> = ({
     {name.charAt(0)}
   </AvatarWrapper>
 );
+
+export const AvatarGroup = styled(Box, {
+  display: "flex",
+
+  "> *:not(:last-child)": {
+    marginRight: "-15px",
+    transition: "margin-right .3s",
+  },
+  "&:hover": {
+    "> *:not(:last-child)": {
+      marginRight: "5px",
+    },
+  }
+});

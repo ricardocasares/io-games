@@ -3,13 +3,12 @@ import { useSocket, useSocketEvent } from "socket.io-react-hook";
 import { FormEventHandler, useState } from "react";
 import { useMotion } from "react-use";
 import type { User } from "@pkg/domain";
-import { Box } from "@/components/Box";
 import { Stack } from "@/components/Stack";
 import { Layout } from "@/components/Layout";
 import { Text } from "@/components/Text";
 import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
-import { Avatar } from "@/components/Avatar";
+import { Avatar, AvatarGroup } from "@/components/Avatar";
 
 export default function Home() {
   const {
@@ -55,11 +54,11 @@ export default function Home() {
       {!emptyRoom && (
         <Stack>
           <Text h3>Participants</Text>
-          <Box>
+          <AvatarGroup>
             {presence.map(({ color, name }) => (
               <Avatar {...{ color, name }} />
             ))}
-          </Box>
+          </AvatarGroup>
         </Stack>
       )}
 
