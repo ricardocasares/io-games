@@ -8,6 +8,7 @@ const io = new Server({
   cors: {
     origin: [
       "http://localhost:3000",
+      "https://io-games.loca.lt",
       "https://io-games.vercel.app",
       "https://io-games-hike.vercel.app",
     ],
