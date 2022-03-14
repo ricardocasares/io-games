@@ -1,6 +1,8 @@
 import { styled } from "@/css";
+import { VariantProps } from "@stitches/react";
+import { ElementType, FC } from "react";
 
-export const Text = styled("h1", {
+export const TextStyles = styled("p", {
   margin: 0,
   padding: 0,
   color: "$accents-3",
@@ -32,3 +34,12 @@ export const Text = styled("h1", {
     },
   },
 });
+
+
+const whitelist: ElementType[] = ['h1', 'h2', 'h3'];
+
+export const Text: FC<VariantProps<typeof TextStyles>> = (props) => {
+  const [tag = "p"] = (Object.keys(props) as ElementType[]).filter(x => whitelist.includes(x));
+
+  return <TextStyles as={tag} {...props} />;
+};
