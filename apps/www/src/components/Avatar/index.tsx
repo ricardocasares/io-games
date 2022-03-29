@@ -1,7 +1,7 @@
-import { styled } from "@/css";
-import { VariantProps } from "@stitches/react";
 import { FC } from "react";
-import { Box } from "../Box";
+import { VariantProps } from "@stitches/react";
+import { styled } from "@/css";
+import { Box } from "@/components/Box";
 
 export const AvatarWrapper = styled("div", {
   size: "40px",
